@@ -82,7 +82,7 @@
             <option value="table5">云挂宝</option>
             <option value="table6">号卡管理</option>
             <option value="table7">等待添加...</option>
-            <option value1="table8">优选域名</option>
+            <option value="table8">优选域名</option>
         </select>
     </form>
     <table id="table1" border="1">
@@ -256,6 +256,20 @@
                 </td>
             </tr>
         </table>
+        <table id="table8" border="2" style="display: none;">
+
+            <tr>
+                <td>
+                  <a href="/yxym.html" target="_blank">优选域名</a>
+                </td>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </table>
         <br>
         <div class="text">
             <script type="text/javascript" src="https://api.vvhan.com/api/love?type=js">
@@ -270,13 +284,6 @@
 
                 $('#' + tableId).show();
             };
-            function loadTableData(value1) {
-                if (value === 'table8') {
-                    window.location.href = '/yxym.html';
-                } else {
-                    
-                }
-            }
         </script>
 </body>
 
