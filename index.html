@@ -7,11 +7,9 @@
     <title>常用网站</title>
     <style>
         table {
-
             border-collapse: collapse;
             margin: 0 auto;
             text-align: center;
-
         }
 
         table td {
@@ -36,7 +34,7 @@
             margin: auto;
             width: fit-content;
             margin-bottom: 20px;
-            margin-top: 150px;
+            margin-top: 20px;
         }
 
         a {
@@ -53,9 +51,27 @@
             border-radius: 5px;
             border: 1px solid #000;
         }
+
+        div img {
+            width: 330px;
+            height: 150px;
+            border-radius: 2%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .text {
+            width: 450px;
+            height: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
     </style>
 
 </head>
+<div>
+    <img src="https://api.vvhan.com/api/view" alt="韩小韩API">
+</div>
 
 <body>
     <form>
@@ -240,7 +256,12 @@
                 </td>
             </tr>
         </table>
-
+        <br>
+        <div class="text">
+            <script type="text/javascript" src="https://api.vvhan.com/api/love?type=js">
+            </script>
+            <script>ishan()</script>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             function loadTableData(tableId) {
