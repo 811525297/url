@@ -70,7 +70,7 @@
 
 </head>
 <div>
-    <img src="https://api.vvhan.com/api/view" alt="韩小韩API">
+    <img src="https://api.vvhan.com/api/view" alt="安辰博客">
 </div>
 
 <body>
@@ -83,6 +83,7 @@
             <option value="table5">云挂宝</option>
             <option value="table6">号卡管理</option>
             <option value="table7">等待添加...</option>
+            <option value="table8">优选域名</option>
         </select>
     </form>
     <table id="table1" border="1">
@@ -269,6 +270,13 @@
                 $('table').hide();
 
                 $('#' + tableId).show();
+            };
+            function loadTableData(value) {
+                if (value === 'table8') {
+                    window.location.href = '/yxym.html';
+                } else {
+                    // Your existing code to load table data
+                }
             }
         </script>
 </body>
