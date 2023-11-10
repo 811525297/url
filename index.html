@@ -53,7 +53,7 @@
         }
 
         div img {
-            width: 330px;
+            width: 100%;
             height: 150px;
             border-radius: 2%;
             margin: 0 auto;
@@ -61,18 +61,63 @@
         }
 
         .text {
-            width: 450px;
+            width: 360px;
             height: auto;
             margin: 0 auto;
+        }
+        .clock {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 10px solid #333;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .hand {
+            position: absolute;
+            transform-origin: 50% 100%;
+            background-color: #333;
+            transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+        }
+
+        .hour {
+            height: 50px;
+            width: 6px;
+            top: 50px;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .minute {
+            height: 80px;
+            width: 4px;
+            top: 20px;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .second {
+            height: 90px;
+            width: 2px;
+            top: 10px;
+            left: 50%;
+            margin-left: -1px;
+            background-color: red;
         }
     </style>
 
 </head>
 <div>
-    <img src="https://api.vvhan.com/api/view" alt="安辰博客">
+    <div class="clock">
+        <div class="hand hour" id="hourHand"></div>
+        <div class="hand minute" id="minuteHand"></div>
+        <div class="hand second" id="secondHand"></div>
+    </div>
 </div>
 
 <body>
+    <script src="https://api.vvhan.com/api/bolang"></script>
     <form>
         <select id="tableSelect" onchange="loadTableData(this.value)">
             <option value="table1">常用网址</option>
@@ -84,7 +129,9 @@
             <option value="table7">等待添加...</option>
             <option value="table8">优选域名</option>
         </select>
+        
     </form>
+    <div id="clock"></div>
     <table id="table1" border="1">
         <tr>
             <td>
@@ -256,26 +303,13 @@
                 </td>
             </tr>
         </table>
-        <table id="table8" border="2" style="display: none;">
-
-            <tr>
-                <td>
-                  <a href="/yxym.html" target="_blank">优选域名</a>
-                </td>
-                <td>
-
-                </td>
-                <td>
-
-                </td>
-            </tr>
-        </table>
         <br>
         <div class="text">
             <script type="text/javascript" src="https://api.vvhan.com/api/love?type=js">
             </script>
             <script>ishan()</script>
         </div>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             function loadTableData(tableId) {
@@ -284,6 +318,25 @@
 
                 $('#' + tableId).show();
             };
+        </script>
+        <script>
+            function updateClock() {
+                const now = new Date();
+                const hours = now.getHours() % 12; // Convert to 12-hour format
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
+        
+                const hourDeg = (hours + minutes / 60) * 30; // 30 degrees per hour
+                const minuteDeg = (minutes + seconds / 60) * 6; // 6 degrees per minute
+                const secondDeg = seconds * 6; // 6 degrees per second
+        
+                document.getElementById('hourHand').style.transform = `rotate(${hourDeg}deg)`;
+                document.getElementById('minuteHand').style.transform = `rotate(${minuteDeg}deg)`;
+                document.getElementById('secondHand').style.transform = `rotate(${secondDeg}deg)`;
+            }
+        
+            setInterval(updateClock, 1000); // Update every second
+            updateClock(); // Initial call to set the initial state
         </script>
 </body>
 
