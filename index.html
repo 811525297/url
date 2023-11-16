@@ -2,368 +2,374 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>常用网站</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            margin: 0 auto;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常用网站</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-        table td {
-            width: 120px;
-            height: 50px;
-            border: 1px solid #000;
-        }
+    table td {
+      width: 120px;
+      height: 50px;
+      border: 1px solid #000;
+    }
 
-        table td a {
-            font-weight: 600;
-            font-family: SimHei;
-            color: #000000;
+    table td a {
+      font-weight: 600;
+      font-family: SimHei;
+      color: #000000;
 
-        }
+    }
 
-        table td a:hover {
-            color: #5dd75f;
-        }
+    table td a:hover {
+      color: #5dd75f;
+    }
 
-        form {
-            display: block;
-            margin: auto;
-            width: fit-content;
-            margin-bottom: 20px;
-            margin-top: 20px;
-        }
+    form {
+      display: block;
+      margin: auto;
+      width: fit-content;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
 
-        a {
-            text-decoration: none;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        select {
-            width: 200px;
-            height: 30px;
-            font-size: 20px;
-            font-weight: 600;
-            font-family: SimHei;
-            color: #000000;
-            border-radius: 5px;
-            border: 1px solid #000;
-        }
+    select {
+      width: 200px;
+      height: 30px;
+      font-size: 20px;
+      font-weight: 600;
+      font-family: SimHei;
+      color: #000000;
+      border-radius: 5px;
+      border: 1px solid #000;
+    }
 
-        div img {
-            width: 100%;
-            height: 150px;
-            border-radius: 2%;
-            margin: 0 auto;
-            display: block;
-        }
+    div img {
+      width: 100%;
+      height: 150px;
+      border-radius: 2%;
+      margin: 0 auto;
+      display: block;
+    }
 
-        .text {
-            width: 360px;
-            height: auto;
-            margin: 0 auto;
-        }
-        .clock {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            border: 10px solid #333;
-            border-radius: 50%;
-            position: relative;
-        }
+    .text {
+      width: 360px;
+      height: auto;
+      margin: 0 auto;
+    }
 
-        .hand {
-            position: absolute;
-            transform-origin: 50% 100%;
-            background-color: #333;
-            transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
-        }
+    .clock {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      border: 10px solid #333;
+      border-radius: 50%;
+      position: relative;
+    }
 
-        .hour {
-            height: 50px;
-            width: 6px;
-            top: 50px;
-            left: 50%;
-            margin-left: -3px;
-        }
+    .hand {
+      position: absolute;
+      transform-origin: 50% 100%;
+      background-color: #333;
+      transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+    }
 
-        .minute {
-            height: 80px;
-            width: 4px;
-            top: 20px;
-            left: 50%;
-            margin-left: -2px;
-        }
+    .hour {
+      height: 50px;
+      width: 6px;
+      top: 50px;
+      left: 50%;
+      margin-left: -3px;
+    }
 
-        .second {
-            height: 90px;
-            width: 2px;
-            top: 10px;
-            left: 50%;
-            margin-left: -1px;
-            background-color: red;
-        }
-        #square {
-    width: 30px;
-    height: 30px;
-    background-color: #cdbbbb; /* 正方形的背景颜色，你可以根据需要修改 */
-    position: fixed;
-    bottom: 40px;
-    right: 20px;
-    transition: border-radius 0.3s, transform 0.3s; /* 添加 transform 属性 */
-    transform-origin: center; /* 设置变换的原点为中心 */
-    cursor: pointer; /* 鼠标指针样式变为手型 */
-}
-    </style>
+    .minute {
+      height: 80px;
+      width: 4px;
+      top: 20px;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .second {
+      height: 90px;
+      width: 2px;
+      top: 10px;
+      left: 50%;
+      margin-left: -1px;
+      background-color: red;
+    }
+
+    #square {
+      width: 30px;
+      height: 30px;
+      background-color: #cdbbbb;
+      /* 正方形的背景颜色，你可以根据需要修改 */
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      transition: border-radius 0.3s, transform 0.3s;
+      /* 添加 transform 属性 */
+      transform-origin: center;
+      /* 设置变换的原点为中心 */
+      cursor: pointer;
+      /* 鼠标指针样式变为手型 */
+    }
+  </style>
 
 </head>
 <div>
-    <div class="clock">
-        <div class="hand hour" id="hourHand"></div>
-        <div class="hand minute" id="minuteHand"></div>
-        <div class="hand second" id="secondHand"></div>
-    </div>
+  <div class="clock">
+    <div class="hand hour" id="hourHand"></div>
+    <div class="hand minute" id="minuteHand"></div>
+    <div class="hand second" id="secondHand"></div>
+  </div>
 </div>
 
 <body>
-    <script src="https://api.vvhan.com/api/bolang"></script>
-    <form>
-        <select id="tableSelect" onchange="loadTableData(this.value)">
-            <option value="table1">常用网址</option>
-            <option value="table2">服务器 </option>
-            <option value="table3">工具</option>
-            <option value="table4">Ai</option>
-            <option value="table5">云挂宝</option>
-            <option value="table6">号卡管理</option>
-            <option value="table7">等待添加...</option>
-        </select>
-        
-    </form>
-    <div id="clock"></div>
-    <table id="table1" border="1">
-        <tr>
-            <td>
-                <a href="https://www.kxdao.org/" target="_blank">科学刀</a>
-            </td>
-            <td>
-                <a href="https://www.52pojie.cn/index.php" target="_blank">吾爱破解</a>
-            </td>
-            <td>
-                <a href="https://cupfox.app/" target="_blank">茶杯狐</a>
-            </td>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="https://github.com/" target="_blank">GitHub</a>
-            </td>
-            <td>
-                <a href="https://stock.hostmonit.com/CloudFlareYes" target="_blank">全球主机监控</a>
-            </td>
-            <td>
-                <a href="https://greasyfork.org/zh-CN/scripts" target="_blank">油猴脚本</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="http://farcdn.net/" target="_blank">CDN</a>
-            </td>
-            <td>
-                <a href="https://pro.yycm.link/" target="_blank">JD</a>
-            </td>
-            <td>
-              <a href="https://probe.web66.link/" target="_blank">哪吒探针</a>
-            </td>
-        </tr>
-        <!-- 服务器管理 -->
-        <table id="table2" border="2" style="display: none;">
-            <tr>
-                <td>
-                    <a href="https://vercel.com/dashboard" target="_blank">vercel</a>
-                </td>
-                <td>
-                    <a href="https://dash.cloudflare.com/login" target="_blank">cloudflare</a>
-                </td>
-                <td>
-                    <a href="http://qijianli.com" target="_blank">CDN</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="https://www.shutianyun.com/" target="_blank">数括云</a>
-                </td>
-                <td>
-                    <a href="https://www.xiyyun.cn/" target="_blank">昕宇云</a>
-                </td>
-                <td>
-                    <a href="https://greasyfork.org/zh-CN/scripts" target="_blank">油猴脚本</a>
-                </td>
-            </tr>
-            <tr>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-            </tr>
+  <script src="https://api.vvhan.com/api/bolang"></script>
+  <form>
+    <select id="tableSelect" onchange="loadTableData(this.value)">
+      <option value="table1">常用网址</option>
+      <option value="table2">服务器 </option>
+      <option value="table3">工具</option>
+      <option value="table4">Ai</option>
+      <option value="table5">云挂宝</option>
+      <option value="table6">号卡管理</option>
+      <option value="table7">等待添加...</option>
+    </select>
 
-        </table>
-        <table id="table3" border="2" style="display: none;">
-            <tr>
-                <td>
-                    <a href="https://nico.cm/" target="_blank">网站统计</a>
-                </td>
-                <td>
-                    <a href="https://www.itdog.cn/ping/" target="_blank">在线ping</a>
-                </td>
-                <td>
-                    <a href="https://www.iconfont.cn/" target="_blank">阿里巴巴矢量图</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="https://voice.google.com/" target="_blank">Voice</a>
-                </td>
-                <td>
-                    <a href="https://www.upyun.com/" target="_blank">又拍云</a>
-                </td>
-                <td>
-                    <a href="https://onedrive.live.com/" target="_blank">OneDrive</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="https://mail.google.com/mail" target="_blank">谷歌邮箱</a>
-                </td>
-                <td>...</td>
-                <td>...</td>
-            </tr>
-        </table>
-        <!-- 编辑Ai管理 -->
-        <table id="table4" border="2" style="display: none;">
+  </form>
+  <div id="clock"></div>
+  <table id="table1" border="1">
+    <tr>
+      <td>
+        <a href="https://www.kxdao.org/" target="_blank">科学刀</a>
+      </td>
+      <td>
+        <a href="https://www.52pojie.cn/index.php" target="_blank">吾爱破解</a>
+      </td>
+      <td>
+        <a href="https://cupfox.app/" target="_blank">茶杯狐</a>
+      </td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </td>
+      <td>
+        <a href="https://stock.hostmonit.com/CloudFlareYes" target="_blank">全球主机监控</a>
+      </td>
+      <td>
+        <a href="https://greasyfork.org/zh-CN/scripts" target="_blank">油猴脚本</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://farcdn.net/" target="_blank">CDN</a>
+      </td>
+      <td>
+        <a href="https://pro.yycm.link/" target="_blank">JD</a>
+      </td>
+      <td>
+        <a href="https://probe.web66.link/" target="_blank">哪吒探针</a>
+      </td>
+    </tr>
+    <!-- 服务器管理 -->
+    <table id="table2" border="2" style="display: none;">
+      <tr>
+        <td>
+          <a href="https://vercel.com/dashboard" target="_blank">vercel</a>
+        </td>
+        <td>
+          <a href="https://dash.cloudflare.com/login" target="_blank">cloudflare</a>
+        </td>
+        <td>
+          <a href="http://qijianli.com" target="_blank">CDN</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://www.shutianyun.com/" target="_blank">数括云</a>
+        </td>
+        <td>
+          <a href="https://www.xiyyun.cn/" target="_blank">昕宇云</a>
+        </td>
+        <td>
+          <a href="https://greasyfork.org/zh-CN/scripts" target="_blank">油猴脚本</a>
+        </td>
+      </tr>
+      <tr>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
 
-            <tr>
-                <td>
-                    <a href="https://open.web66.link/" target="_blank">cahtGPT（老版）</a>
-                </td>
-                <td>
-                    <a href="https://chat.openai.com/" target="_blank">cahtGPT（官方）</a>
-                </td>
-                <td>
-                  <a href="https://chat.web66.link/" target="_blank">cahtGPT(最新版)</a>
-              </td>
-                <td>
-                    <a href="https://app.leonardo.ai/" target="_blank">画画Ai</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="https://clipdrop.co/" target="_blank">图片处理</a>
-                </td>
-                <td>
-                    <a href="https://www.mathgpt.com/" target="_blank">MathGPT</a>
-                </td>
-                <td>
-                    <a href="https://www.perplexity.ai/" target="_blank">perplexity</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    ...
-                </td>
-                <td>...</td>
-                <td>...</td>
-            </tr>
-        </table>
-        <!-- 云挂宝管理 -->
-        <table id="table5" border="2" style="display: none;">
+    </table>
+    <table id="table3" border="2" style="display: none;">
+      <tr>
+        <td>
+          <a href="https://nico.cm/" target="_blank">网站统计</a>
+        </td>
+        <td>
+          <a href="https://www.itdog.cn/ping/" target="_blank">在线ping</a>
+        </td>
+        <td>
+          <a href="https://www.iconfont.cn/" target="_blank">阿里巴巴矢量图</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://voice.google.com/" target="_blank">Voice</a>
+        </td>
+        <td>
+          <a href="https://www.upyun.com/" target="_blank">又拍云</a>
+        </td>
+        <td>
+          <a href="https://onedrive.live.com/" target="_blank">OneDrive</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://mail.google.com/mail" target="_blank">谷歌邮箱</a>
+        </td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+    </table>
+    <!-- 编辑Ai管理 -->
+    <table id="table4" border="2" style="display: none;">
 
-            <tr>
-                <td>
-                    <a href="https://daigua.sxhjgy.cn/" target="_blank">云挂宝</a>
-                </td>
-                <td>
-                    <a href="https://daiguaw.uudg.vip" target="_blank">云挂宝</a>
-                </td>
-                <td>
-                    ...
-                </td>
-            </tr>
-        </table>
-        <!-- 号卡管理 -->
-        <table id="table6" border="2" style="display: none;">
+      <tr>
+        <td>
+          <a href="https://open.web66.link/" target="_blank">cahtGPT（老版）</a>
+        </td>
+        <td>
+          <a href="https://chat.openai.com/" target="_blank">cahtGPT（官方）</a>
+        </td>
+        <td>
+          <a href="https://chat.web66.link/" target="_blank">cahtGPT(最新版)</a>
+        </td>
+        <td>
+          <a href="https://app.leonardo.ai/" target="_blank">画画Ai</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://clipdrop.co/" target="_blank">图片处理</a>
+        </td>
+        <td>
+          <a href="https://www.mathgpt.com/" target="_blank">MathGPT</a>
+        </td>
+        <td>
+          <a href="https://www.perplexity.ai/" target="_blank">perplexity</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ...
+        </td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+    </table>
+    <!-- 云挂宝管理 -->
+    <table id="table5" border="2" style="display: none;">
 
-            <tr>
-                <td>
-                    <a href="http://hao.aissk.cn/agent/reg.php?code=49QB7L4W" target="_blank">野马通讯</a>
-                </td>
-                <td>
-                    <a href="https://haoka.lot-ml.com/reg.html" target="_blank">172平台</a>
-                </td>
-                <td>
-                    ...
-                </td>
-            </tr>
-        </table>
-        <!-- 等待添加 -->
-        <table id="table7" border="2" style="display: none;">
+      <tr>
+        <td>
+          <a href="https://daigua.sxhjgy.cn/" target="_blank">云挂宝</a>
+        </td>
+        <td>
+          <a href="https://daiguaw.uudg.vip" target="_blank">云挂宝</a>
+        </td>
+        <td>
+          ...
+        </td>
+      </tr>
+    </table>
+    <!-- 号卡管理 -->
+    <table id="table6" border="2" style="display: none;">
 
-            <tr>
-                <td>
-                  
-                </td>
-                <td>
+      <tr>
+        <td>
+          <a href="http://hao.aissk.cn/agent/reg.php?code=49QB7L4W" target="_blank">野马通讯</a>
+        </td>
+        <td>
+          <a href="https://haoka.lot-ml.com/reg.html" target="_blank">172平台</a>
+        </td>
+        <td>
+          ...
+        </td>
+      </tr>
+    </table>
+    <!-- 等待添加 -->
+    <table id="table7" border="2" style="display: none;">
 
-                </td>
-                <td>
+      <tr>
+        <td>
 
-                </td>
-            </tr>
-        </table>
-        <br>
-        <div class="text">
-            <script type="text/javascript" src="https://api.vvhan.com/api/love?type=js">
-            </script>
-            <script>ishan()</script>
-        </div>
-        <div id="square" onclick="turnToCircle()"></div>
-        <script>
-          function turnToCircle() {
-              var square = document.getElementById('square');
-              square.style.borderRadius = '50%'; // 变成圆形
-              window.location.href = '/yxym.html';
-          }
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+      </tr>
+    </table>
+    <br>
+    <div class="text">
+      <script type="text/javascript" src="https://api.vvhan.com/api/love?type=js">
       </script>
+      <script>ishan()</script>
+    </div>
+    <div id="square" onclick="turnToCircle()"></div>
+    <script>
+      function turnToCircle() {
+        var square = document.getElementById('square');
+        square.style.borderRadius = '50%'; // 变成圆形
+        window.location.href = '/yxym.html';
+      }
+    </script>
 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-            function loadTableData(tableId) {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      function loadTableData(tableId) {
 
-                $('table').hide();
+        $('table').hide();
 
-                $('#' + tableId).show();
-            };
-        </script>
-        <script>
-            function updateClock() {
-                const now = new Date();
-                const hours = now.getHours() % 12; // Convert to 12-hour format
-                const minutes = now.getMinutes();
-                const seconds = now.getSeconds();
-        
-                const hourDeg = (hours + minutes / 60) * 30; // 30 degrees per hour
-                const minuteDeg = (minutes + seconds / 60) * 6; // 6 degrees per minute
-                const secondDeg = seconds * 6; // 6 degrees per second
-        
-                document.getElementById('hourHand').style.transform = `rotate(${hourDeg}deg)`;
-                document.getElementById('minuteHand').style.transform = `rotate(${minuteDeg}deg)`;
-                document.getElementById('secondHand').style.transform = `rotate(${secondDeg}deg)`;
-            }
-        
-            setInterval(updateClock, 1000); // Update every second
-            updateClock(); // Initial call to set the initial state
-        </script>
+        $('#' + tableId).show();
+      };
+    </script>
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const hours = now.getHours() % 12; // Convert to 12-hour format
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const hourDeg = (hours + minutes / 60) * 30; // 30 degrees per hour
+        const minuteDeg = (minutes + seconds / 60) * 6; // 6 degrees per minute
+        const secondDeg = seconds * 6; // 6 degrees per second
+
+        document.getElementById('hourHand').style.transform = `rotate(${hourDeg}deg)`;
+        document.getElementById('minuteHand').style.transform = `rotate(${minuteDeg}deg)`;
+        document.getElementById('secondHand').style.transform = `rotate(${secondDeg}deg)`;
+      }
+
+      setInterval(updateClock, 1000); // Update every second
+      updateClock(); // Initial call to set the initial state
+    </script>
 </body>
 
 </html>
