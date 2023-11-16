@@ -105,6 +105,17 @@
             margin-left: -1px;
             background-color: red;
         }
+        #square {
+    width: 30px;
+    height: 30px;
+    background-color: #cdbbbb; /* 正方形的背景颜色，你可以根据需要修改 */
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    transition: border-radius 0.3s, transform 0.3s; /* 添加 transform 属性 */
+    transform-origin: center; /* 设置变换的原点为中心 */
+    cursor: pointer; /* 鼠标指针样式变为手型 */
+}
     </style>
 
 </head>
@@ -127,7 +138,6 @@
             <option value="table5">云挂宝</option>
             <option value="table6">号卡管理</option>
             <option value="table7">等待添加...</option>
-            <option value="table8">优选域名</option>
         </select>
         
     </form>
@@ -163,8 +173,11 @@
             <td>
                 <a href="https://pro.yycm.link/" target="_blank">JD</a>
             </td>
-            <td>.....</td>
+            <td>
+              <a href="https://probe.web66.link/" target="_blank">哪吒探针</a>
+            </td>
         </tr>
+        <!-- 服务器管理 -->
         <table id="table2" border="2" style="display: none;">
             <tr>
                 <td>
@@ -174,7 +187,7 @@
                     <a href="https://dash.cloudflare.com/login" target="_blank">cloudflare</a>
                 </td>
                 <td>
-                    <a href="https://cs.senlucloud.cn/login" target="_blank">森鹿</a>
+                    <a href="http://qijianli.com" target="_blank">CDN</a>
                 </td>
             </tr>
             <tr>
@@ -231,11 +244,14 @@
 
             <tr>
                 <td>
-                    <a href="https://open.web66.link/" target="_blank">cahtGPT</a>
+                    <a href="https://open.web66.link/" target="_blank">cahtGPT（老版）</a>
                 </td>
                 <td>
-                    <a href="https://chat.openai.com/" target="_blank">cahtGPT</a>
+                    <a href="https://chat.openai.com/" target="_blank">cahtGPT（官方）</a>
                 </td>
+                <td>
+                  <a href="https://chat.web66.link/" target="_blank">cahtGPT(最新版)</a>
+              </td>
                 <td>
                     <a href="https://app.leonardo.ai/" target="_blank">画画Ai</a>
                 </td>
@@ -289,11 +305,12 @@
                 </td>
             </tr>
         </table>
+        <!-- 等待添加 -->
         <table id="table7" border="2" style="display: none;">
 
             <tr>
                 <td>
-
+                  
                 </td>
                 <td>
 
@@ -309,7 +326,16 @@
             </script>
             <script>ishan()</script>
         </div>
-        
+        <div id="square" onclick="turnToCircle()"></div>
+        <script>
+          function turnToCircle() {
+              var square = document.getElementById('square');
+              square.style.borderRadius = '50%'; // 变成圆形
+              window.location.href = '/yxym.html';
+          }
+      </script>
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             function loadTableData(tableId) {
